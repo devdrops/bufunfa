@@ -1,0 +1,22 @@
+{
+    "name": "devdrops/bufunfa",
+    "description": "Controlando os meus gastos :)",
+    "require": {
+        "silex/silex": "^2.0",
+        "unreal4u/telegram-api": "~2.0"
+    },
+    "authors": [
+        {
+            "name": "Davi Marcondes Moreira",
+            "email": "davi.marcondes.moreira@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": {
+            "Bufunfa": "src/"
+        },
+        "psr-4": {
+            "Bufunfa\\": "src/"
+        }
+    }
+}
