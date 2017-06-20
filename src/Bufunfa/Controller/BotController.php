@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use unreal4u\TelegramAPI\Telegram\Methods\SendMessage;
 use unreal4u\TelegramAPI\Telegram\Types\Update;
+use unreal4u\TelegramAPI\Telegram\Methods\SetWebhook;
 
 /**
  * @author Davi Marcondes Moreira (@devdrops) <davi.marcondes.moreira@gmail.com>
@@ -27,6 +28,18 @@ class BotController
             return new JsonResponse(['status' => 'Ok!']);
         } catch (\Exception $exception) {
             
+        }
+    }
+
+    public function setWebhookAction(Request $request, Application $app)
+    {
+        try {
+            $webHook = new SetWebhook();
+            $webHook->url = $app['telegram.settings']['webhook'];
+
+            $app['telegram']->performApiRequest($webHook);
+        } catch (\Exception $exception) {
+
         }
     }
 }
