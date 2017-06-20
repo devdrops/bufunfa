@@ -14,7 +14,7 @@ use unreal4u\TelegramAPI\Telegram\Methods\SetWebhook;
  */
 class BotController
 {
-    public function webhookAction(Request $request, Application $app)
+    public function newEntryAction(Request $request, Application $app)
     {
         try {
             $update = new Update(json_decode($request->getContent(), true));
@@ -38,8 +38,13 @@ class BotController
             $webHook->url = $app['telegram.settings']['webhook'];
 
             $app['telegram']->performApiRequest($webHook);
+
+            return new JsonResponse([
+                'status' => 'WebHook URL is now defined! :D'
+            ]);
         } catch (\Exception $exception) {
 
         }
     }
 }
+
