@@ -4,7 +4,6 @@ namespace Bufunfa\Provider;
 
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
-use unreal4u\TelegramAPI\Telegram\Methods\SetWebhook;
 use unreal4u\TelegramAPI\TgLog;
 
 class TelegramServiceProvider implements ServiceProviderInterface

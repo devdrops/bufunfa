@@ -43,7 +43,7 @@ class BotController
                 'status' => 'WebHook URL is now defined! :D'
             ]);
         } catch (\Exception $exception) {
-
+            var_dump($exception);
         }
     }
 }
