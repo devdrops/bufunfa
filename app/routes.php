@@ -5,5 +5,5 @@
  */
 
 $app->post('/newentry', 'Bufunfa\Controller\BotController::newEntryAction');
-$app-get('/webhook', 'Bufunfa\Controller\BotController:setWebhookAction');
+$app-get('/webhook', 'Bufunfa\Controller\BotController::setWebhookAction');
 
